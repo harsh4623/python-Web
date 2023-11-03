@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .chart {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Chart</h1>
+    <form method="POST">
+        <label for="mobile_name">Select Mobile Name:</label>
+        <select name="mobile_name" id="mobile_name">
+            <option value="">-- Select a Mobile --</option>
+            {% for mobile in sorted_mobile_names %}
+                <option value="{{ mobile }}">{{ mobile }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Generate Chart">
+    </form>
+    <div class="chart">
+        {% if chart_base64 %}
+            <h2>Star-wise Rating Chart</h2>
+            {{ chart_base64|safe }}
+        {% endif %}
+    </div>
+</body>
+</html>

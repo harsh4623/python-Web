@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>REVIEW SENSE</title>
+	<style>
+		* body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			margin: 0;
+			padding: 0;
+			background-image: url('/static/h1.jpeg');
+			background-repeat: repeat;
+		}
+
+		ul {
+			list-style-type: none;
+			background-color: rgba(249, 244, 244, 0.9);
+			margin-bottom: 10px;
+			color: rgb(2, 0, 0);
+			margin-top: -38px;
+			padding: 0px;
+			overflow: hidden;
+			margin-left: -10px;
+			margin-right: -10px;
+			z-index: 1;
+			position: sticky;
+			top: 0px;
+		}
+
+		li {
+			display: inline;
+			float: left;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			padding: 1rem;
+		}
+
+		.container {
+			/* max-width: 800px; */
+			margin: 0 auto;
+			padding: 0.1 rem;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+			background-image: url('/static/i1.jpg');
+			background-repeat: no-repeat;
+			background-image: url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=60&w=900&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGFuYWx5c2lzfGVufDB8fDB8fHww');
+			background-size: cover;
+			/* background-repeat: repeat; */
+			/* background-size: cover; */
+		}
+
+		h1 {
+			background-color: rgba(0, 0, 0, 0.9);
+			color: white;
+			border: 10px;
+			margin-left: -10px;
+			margin-right: -10px;
+			margin-top: -10px;
+			padding: 15px;
+			font-size: 60px;
+			text-align: center;
+			font-family: "Times New Roman";
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		select {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 16px;
+		}
+
+		button[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #555;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #333;
+			color: #fff;
+			padding: 1rem;
+		}
+
+		a:link,
+		a:visited {
+			color: rgb(10, 2, 2);
+			padding: 14px 25px;
+			text-align: center;
+			text-decoration: none;
+			display: block;
+			font-weight: bold;
+		}
+
+		a:hover,
+		a:active {
+			background-color: rgb(16, 46, 157);
+			color: #55f90f;
+		}
+
+		.basic_box {
+			border: 1px solid #ccc;
+			background-color: rgb(177, 197, 207);
+			border-radius: 5px;
+			margin: 10px 220px;
+			padding: 50px;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+		}
+
+		.r_room {
+			color: #FFF;
+			border: 10px;
+			padding: 10px;
+			font-size: 35px;
+			text-align: center;
+			text-shadow: 2px 2px black;
+			background-color: rgba(09, 41, 98, 0.99);
+			width: 500px;
+			margin: auto;
+			border-radius: 40px;
+		}
+
+		.row {
+			display: flex;
+		}
+
+		.column {
+			flex: 33.33%;
+			padding: 5px;
+		}
+
+		.column:hover{
+			transform: scale(1.05);
+			background-color: rgb(244, 1, 1);
+
+		}
+
+		.column1{
+			flex: 33.33%;
+			padding: 5px 50px;
+		}
+		.column1:hover{
+			transform: scale(1.05);
+			background-color: rgb(153, 255, 94);
+
+		}
+		h3:hover{
+			color: rgb(2, 1, 1);
+		}
+
+		.footer {
+			background-color: rgba(12, 13, 14, 0.99);
+			color: #f3e7e7;
+			bottom: 0px;
+			margin: 0px;
+			margin-bottom: 0px;
+			padding: 10px, 0;
+			color: #fff;
+			padding: 1rem;
+		}
+
+		.intro {
+			border: 2px solid;
+			font-family: Arial, sans-serif;
+			border-radius: 10px;
+			margin: 40px auto;
+			background-color: #f0e2e2;
+			color: black;
+		}
+
+		.obj {
+			border: 2px solid;
+			font-family: Arial, sans-serif;
+			border-radius: 10px;
+			margin: 40px auto;
+			background-color: #71aacb;
+			color: black;
+		}
+
+		.w3-center .w3-bar {
+			display: inline-block;
+			width: auto;
+			margin: 2px;
+		}
+
+		.w3-container,
+		.w3-panel {
+			padding: 0.01em 16px;
+		}
+
+		.w3-large {
+			font-size: 30px ;
+			font-weight: bolder;
+
+		}
+		.w3-center {
+			text-align: center;
+
+		}
+
+		.w3-centerr {
+			text-align: center;
+			font-size: 30px;
+			border: 3px solid black;
+			margin: 30px 220px;
+			background-color: #ccc;
+		}
+		.w3-centerr:hover {
+			transform: scale(1.05);
+			background-color: white;
+			color: black;
+		}
+
+		.w3-container:after,
+		.w3-container:before,
+		.w3-panel:after,
+		.w3-panel:before,
+		.w3-row:after,
+		.w3-row:before,
+		.w3-row-padding:after,
+		.w3-row-padding:before,
+		.w3-cell-row:before,
+		.w3-cell-row:after,
+		.w3-clear:after,
+		.w3-clear:before,
+		.w3-bar:before,
+		.w3-bar:after {
+			content: "";
+			display: table;
+			clear: both
+		}
+
+		.w3-quarter {
+			float: left;
+			width: 100%;
+		}
+
+		/* Style the .w3-quarter class */
+		.w3-quarter {
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: white;
+			padding: 20px;
+			margin: 10px;
+			border-radius: 10px;
+			transition: transform 0.2s;
+		}
+
+		.w3-quarter:hover {
+			transform: scale(1.05);
+			background-color: white;
+			color: black;
+		}
+
+		/* Style the inner elements within .w3-quarter */
+		.w3-quarter i {
+			font-size: 36px;
+			margin-bottom: 10px;
+		}
+
+		.w3-quarter p {
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+
+		/* Center the .w3-quarter horizontally */
+		.w3-quarter {
+			display: inline-block;
+			/* width: calc(20% - 20px); */
+			/* Adjust as needed */
+			vertical-align: top;
+		}
+
+		/* Style the .intro container */
+		.intro {
+			background-color: #f0e2e2;
+			/* Set your desired background color */
+			opacity: 70%;
+			color: black;
+			/* Text color */
+			border: 2px solid;
+			font-family: Arial, sans-serif;
+			font-weight: bolder;
+			border-radius: 10px;
+			/* margin: 40px auto; */
+			padding: 40px;
+			/* Add some padding for spacing */
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+
+			/* Add a shadow for depth */
+		}
+
+		.intro:hover{
+			transform: scale(1.05);
+			background-color: white;
+
+		}
+
+		
+
+		/* Style the text within the .intro container */
+		.intro p.introd {
+			font-size: 30px;
+			/* Set your desired font size */
+			line-height: 1.6;
+			/* Adjust line height as needed for readability */
+			text-align: center;
+			/* Center the text */
+			margin: 0;
+			/* Remove default margin for a clean look */
+		}
+
+		/* Slideshow container */
+		.slideshow-container {
+		  max-width: 10000px;
+		  position: relative;
+		  margin: -9px;
+		  padding: 0px;
+		}
+
+		/* Caption text */
+		.text {
+		  color: #f2f2f2;
+		  font-size: 30px;
+		  padding: 8px 12px;
+		  position: absolute;
+		  bottom: 8px;
+		  width: 100%;
+		  text-shadow: 4px 4px black;
+		  text-align: center;
+		}
+
+		/* Number text (1/3 etc) */
+		.numbertext {
+		  color: #f2f2f2;
+		  font-size: 12px;
+		  padding: 8px 12px;
+		  position: absolute;
+		  top: 0;
+		}
+
+		/* The dots/bullets/indicators */
+		.dot {
+		  height: 15px;
+		  width: 15px;
+		  margin: 0 2px;
+		  background-color: white;
+		  border-radius: 50%;
+		  display: inline-block;
+		  transition: background-color 0.6s ease;
+		}
+
+		.active {
+		  background-color: #717171;
+		}
+
+		/* Fading animation */
+		.fade {
+		  -webkit-animation-name: fade;
+		  -webkit-animation-duration: 1.5s;
+		  animation-name: fade;
+		  animation-duration: 1.5s;
+		}
+
+		@-webkit-keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+		@keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<h1>
+			<p style="color: #e6b800; display: inline;"> ReviewSense:</p> Decoding E-commerce Sentiments
+		</h1>
+
+		<ul>
+			<li><a href="">HOME</a>
+			<li><a href="/feature_wise_selection">feature_wise_selection</a></li>
+			<li><a href="/compare_two_mobile">compare_two_mobile</a></li>
+			<li><a href="/mobile_review">mobile_review</a>
+			<li><a href="/chart">Comapany_Wise_chart</a>
+			<li style="float: right;"><a href="#contact"> Contact US</a></li>
+		</ul>
+
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<img id="1" src="/static/scr1.png" style="width:70% ;margin:0px 210px;">
+				<!-- <div class="text">FEATURE WISE SELECTION</div> -->
+			</div>
+
+			<div class="mySlides fade">
+				<img id="2" src="/static/scr2.png" style="width:70% ;margin:0px 210px;">
+				<!-- <div class="text">COMPARE TWO MOBILES</div> -->
+			</div>
+
+			<div class="mySlides fade">
+				<img id="3" src="/static/scr3.png" style="width:70% ;margin:0px 210px;">
+				<!-- <div class="text">SPEIFIC MOBILE REVIEWS</div> -->
+			</div>
+
+			<div class="mySlides fade">
+				<img id="3" src="/static/scr4.png" style="width:70% ;margin:0px 210px;">
+				<!-- <div class="text">COMPANY ANALYSIS</div> -->
+			</div>
+		</div>
+
+		
+		<br>
+		<div style="text-align:center">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
+
+	
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) { slideIndex = 1 }
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " active";
+				setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+			}
+		</script>
+
+		<!-- <div class="bg">
+
+			<img src="/static/img11.png" style="background-size: cover; width: 1400px;margin:0px 20px;" class="i1">
+		</div> -->
+
+		<!-- <div class="intro">
+			<p class="introd">E-commerce platforms have revolutionized the way we shop, and user reviews have become a
+				cornerstone of the shopping experience. Our project, "ReviewSense: Decoding E-commerce Sentiments," is
+				dedicated to unraveling the hidden insights within these reviews. By harnessing the power of natural
+				language processing and data analytics, we delve deep into the sentiments expressed by shoppers on
+				Flipkart.</p>
+
+		</div> -->
+		<!-- <div class="obj">
+			<p class="obje"><b>Sentiment Classification:</b> Develop a robust sentiment analysis model capable of
+				categorizing user reviews into positive, negative, or neutral sentiments.
+
+				<br> <b>Mobile Device Comparison:</b> Provide users with the ability to compare two mobile devices based
+				on user reviews, aiding them in making informed choices.
+				<br> <b>Specific MObileAnalysis:</b> Enable users to search for detailed reviews of specific mobile
+				devices, ensuring they have access to comprehensive information.
+			</p>
+		</div> -->
+		<!-- <a class="reserve_room" href="user_login.php">RESERVE A ROOM</a><br> -->
+
+		<div class="w3-container" id="about">
+			<h3 class="w3-centerr">ABOUT THE WEBSITE</h3>
+			<div class="intro">
+				<p class="introd">E-commerce platforms have revolutionized the way we shop, and user reviews have become
+					a cornerstone of the shopping experience.
+					 Our project, "ReviewSense: Decoding E-commerce Sentiments,"
+					is
+					dedicated to unraveling the hidden insights within these reviews. By harnessing the power of natural
+					language processing and data analytics, we delve deep into the sentiments expressed by shoppers on
+					Flipkart.</p>
+
+			</div>
+			<p class="w3-centerr w3-large">Key features of our website</p>
+			<div class="w3-row-padding w3-center" style="margin-top:64px">
+				<div class="w3-quarter">
+					<i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+					<p class="w3-large">REVIEW PHONE DETAILS</p>
+					<p>Choose a specific smartphone model for analysis. Display some features of the mobile.</p>
+				</div>
+
+				<div class="w3-quarter">
+					<i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+					<p class="w3-large">COMPARE TWO DIFFERENT PHONE</p>
+					<p>Select two different smartphone models for comparison.Conduct sentiment analysis on the reviews
+						of both models.</p>
+				</div>
+
+				<div class="w3-quarter">
+					<i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+					<p class="w3-large">FEATURE WISE MOBILE SELECTION</p>
+					<p>Extract features related to battery life,display quality and storage from the review text using
+						relevant keywords.</p>
+				</div>
+
+				<div class="w3-quarter">
+					<i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+					<p class="w3-large">SENTIMENT ANALYSIS</p>
+					<p>Analyze the distribution of sentiment labels (positive, negative, neutral) based on the review
+						ratings. </p>
+				</div>
+				
+			</div>
+		</div>
+
+		<h2 class="r_room">OUR SERVICES</h2><br>
+		<div id="rooms_and_rates" class="basic_box">
+			<div class="row">
+				<div class="column">
+					<img src="https://images.unsplash.com/photo-1480694313141-fce5e697ee25?auto=format&fit=crop&q=60&w=900&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1vYmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+						alt="Snow" style="width:100% ;height: 200px;">
+				</div>
+				<div class="column">
+					<img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?auto=format&fit=crop&q=60&w=900&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9iaWxlfGVufDB8fDB8fHww"
+						alt="Forest" style="width:100% ; height: 200px;">
+				</div>
+				<div class="column">
+					<img src="https://media.istockphoto.com/id/1210565724/photo/reviewing-a-financial-reports-in-returning-on-investment-analysis.webp?b=1&s=170667a&w=0&k=20&c=vv8P6Zm7Ft-6JXak_FXdJF5951sVqkhR92j_3WbX28I="
+						alt="Mountains" style="width:100% ;height: 200px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="column1">
+					<h3>feature_wise_selection</h3>
+				</div>
+				<div class="column1">
+					<h3>compare_two_mobile</h3>
+				</div>
+				<div class="column1">
+					<h3>Company Analysis</h3>
+				</div>
+			</div>
+		</div><br>
+		<div id="contact" class="footer">
+			<hr>
+			<h2 class="foot-text">Contact Us!</h2>
+			<h2 class="foot-text">Review Sense</h2>
+			<h2 class="foot-text">Contact No: +91 82005 76528</h2>
+			<h2 class="foot-text">Email : harshpatel46399@gmail.com</h2>
+		</div>
+
+
+</body>
+
+</html>

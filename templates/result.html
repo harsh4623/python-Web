@@ -1,0 +1,38 @@
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Features - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Nearest Mobile Specifications</h1>
+    <div>
+        {{ data | safe }}
+    </div>
+</body> 
+</html> 
+
+ -->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Features - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Nearest Mobile Specifications</h1>
+    <div>
+        <!-- {% if data.empty %}
+            <p>No matching mobiles found.</p>
+        {% else %}
+            {{ data | safe }}
+        {% endif %} -->
+        {% if data %}
+            {{ data | safe }}
+        {% else %}
+            <p> No such Mobile</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+

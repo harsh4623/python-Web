@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mobile Features</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Mobile Features</h1>
+    <form method="POST">
+        <label for="company_name">Mobile Name:</label>
+        <select name="company_name" id="company_name">
+            <option value="">Select Company Name</option>
+            {% for name in company_names %}
+            <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="price">Price (max):</label>
+        <select name="price_range" id="price_range">
+            <option value="">Select Price</option>
+            {% for price_range in price_ranges %}
+            <option value="{{ price_range }}">{{ price_range }}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- <label for="color">Color:</label>
+        <select name="color" id="color">
+            <option value="">Select Color</option>
+            {% for color in colors %}
+            <option value="{{ color }}">{{ color }}</option>
+            {% endfor %}
+        </select><br> -->
+
+        <label for="camera">Camera:(Optional)</label>
+        <select name="camera" id="camera">
+            <option value="">Select Camera </option>
+            {% for camera in cameras %}
+            <option value="{{ camera }}">{{ camera }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="display_size">Display Size (max):(Optional)</label>
+        <select name="display" id="display">
+            <option value="">Select Display(Optional)</option>
+            {% for display in displays %}
+            <option value="{{ display }}">{{ display }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="rating_range">Ratings:</label>
+        <select name="rating_range" id="rating_range">
+            <option value="">Select Rating Range</option>
+            {% for rating_range in rating_ranges %}
+            <option value="{{ rating_range }}">{{ rating_range }}</option>
+            {% endfor %}
+        </select><br>
+
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+
+</html>

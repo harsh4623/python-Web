@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set the background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333; /* Set the heading color */
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .mobile-names {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparison Result</h1>
+    <div class="mobile-names">
+        <p>Differences between {{ mobile1 }} and {{ mobile2 }}:</p>
+    </div>
+    <ul>
+        {% for item in diff_data_dict_list %}
+        <li>
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+                {% for key, value in item.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    {% if key == "Images" %}
+                    <td><a href="{{ value }}" target="_blank">View Image</a></td>
+                    {% else %}
+                    <td>{{ value }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

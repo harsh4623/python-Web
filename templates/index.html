@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .mobile-features {
+            /* text-align: center; */
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Features</h1>
+    <form method="POST">
+        <label for="mobile_name">Select Mobile Name:</label>
+        <select name="mobile_name" id="mobile_name">
+            {% for mobile in sorted_mobile_names %}
+            <option value="{{ mobile }}">{{ mobile }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Get Features">
+    </form>
+    <div class="mobile-features">
+        {% if mobile_features %}
+        <h2>Features of {{ mobile_features[0]['Mobile Name'] }}</h2>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            {% for key, value in mobile_features[0].items() %}
+            <tr>
+                <td>{{ key }}</td>
+                {% if key == "Images" %}
+                <td><img src="{{ value }}" alt="Mobile Image" style="max-width: 100%; max-height: 200px;"></td>
+                {% else %}
+                <td>{{ value }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+</body>
+</html>

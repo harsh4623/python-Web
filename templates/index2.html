@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Comparison</title>
+</head>
+<body>
+    <h1>Mobile Comparison</h1>
+    <form method="POST">
+        <label for="mobile1">Select Mobile 1:</label>
+        <select name="mobile1" id="mobile1">
+            {% for mobile in mobile_names %}
+            <option value="{{ mobile }}">{{ mobile }}</option>
+            {% endfor %}
+        </select>
+        <label for="mobile2">Select Mobile 2:</label>
+        <select name="mobile2" id="mobile2">
+            {% for mobile in mobile_names %}
+            <option value="{{ mobile }}">{{ mobile }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Compare">
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set the background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333; /* Set the heading color */
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Comparison</h1>
+    <form method="POST">
+        <label for="mobile1">Select Mobile 1:</label>
+        <select name="mobile1" id="mobile1">
+            {% for mobile in mobile_names %}
+            <option value="{{ mobile }}">{{ mobile }}</option>
+            {% endfor %}
+        </select>
+        <label for="mobile2">Select Mobile 2:</label>
+        <select name="mobile2" id="mobile2">
+            {% for mobile in mobile_names %}
+            <option value="{{ mobile }}">{{ mobile }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Compare">
+    </form>
+</body>
+</html>

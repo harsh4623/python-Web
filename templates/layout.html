@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+
+    <style>
+        /* Reset default margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+    
+        /* Style the navigation menu */
+        nav ul {
+            list-style: none;
+            background-color: #333;
+        }
+    
+        nav li {
+            display: inline;
+        }
+    
+        nav a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+        }
+    
+        nav a:hover {
+            background-color: #555;
+        }
+    
+        /* Style the content area */
+        .content {
+            padding: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/feature_wise_selection">Feature Wise Selection</a></li>
+            <li><a href="/compare_two_mobile">Compare Two Mobile</a></li>
+            <li><a href="/mobile_review">Mobile Review</a></li>
+            <li><a href="/chart">Chart</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <!-- You can place any common content here, or remove this div -->
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Company Data Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Data Visualization</h1>
+
+    <div class="graph">
+        <h2>Average Ratings by Company</h2>
+        <div class="chart">
+            {% if chart_base64_1 %}
+                <h2>Star-wise Rating Chart</h2>
+                {{ chart_base64_1|safe }}
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="graph">
+        <h2>Average Prices by Company</h2>
+        <img src="{{ url_for('prices_chart') }}" alt="Average Prices">
+    </div>
+
+    <div class="graph">
+        <h2>Average Battery Capacity by Company</h2>
+        <img src="{{ url_for('battery_chart') }}" alt="Average Battery Capacity">
+    </div>
+
+    <div class="graph">
+        <h2>Sentiment Distribution by Company</h2>
+        <img src="{{ url_for('sentiment_chart') }}" alt="Sentiment Distribution">
+    </div>
+
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .chart {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chart">
+        {% if chart_base64 %}
+            <h2>Star-wise Rating Chart</h2>
+            {{ chart_base64 |safe }}
+        {% endif %}
+    </div>
+    <div class="chart">
+        {% if chart_base64_1 %}
+            <h2>Average Ratings for each Company</h2>
+            {{ chart_base64_1 |safe }}
+        {% endif %}
+    </div>
+    <div class="chart">
+        {% if chart_base64_2 %}
+            <h2>Average Battery Capacity by each Company</h2>
+            {{ chart_base64_2 |safe }}
+        {% endif %}
+    </div>
+    <div class="chart">
+        {% if chart_base64_3 %}
+            <h2>Average Sentiment by each Company</h2>
+            {{ chart_base64_3 |safe }}
+        {% endif %}
+    </div>
+</body>
+</html>
+
